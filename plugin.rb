@@ -16,5 +16,5 @@ require_relative "lib/discourse_hide_login_idp/lookup"
 require_relative "lib/discourse_hide_login_idp/decision"
 
 after_initialize do
-  require_relative "config/routes"
+  require_relative "lib/discourse_hide_login_idp/routes"
 end
