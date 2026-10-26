@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+DiscourseHideLoginIdp::Engine.routes.draw do
+  get "/discourse-hide-login-idp/restrict" => "restrict#show"
+end
+
 Discourse::Application.routes.append do
-  get "/discourse-hide-login-idp/restrict" => "discourse_hide_login_idp/restrict#show"
+  mount ::DiscourseHideLoginIdp::Engine, at: "/"
 end

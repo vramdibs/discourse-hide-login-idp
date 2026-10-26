@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class DiscourseHideLoginIdp::RestrictController < ::ApplicationController
+  requires_plugin PLUGIN_NAME
+
   skip_before_action :redirect_to_login_if_required, raise: false
   skip_before_action :check_xhr, raise: false
 
