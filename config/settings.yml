@@ -1,0 +1,17 @@
+hide_login_idp_country_codes:
+  client: true
+  type: list
+  default: ""
+  list_type: compact
+  category: login
+hide_login_idp_visible_buttons:
+  client: true
+  type: list
+  default: ""
+  list_type: compact
+  category: login
+hide_login_idp_restrict_unknown_country:
+  client: true
+  type: bool
+  default: true
+  category: login

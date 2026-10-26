@@ -1,0 +1,5 @@
+en:
+  site_settings:
+    hide_login_idp_country_codes: "ISO 3166-1 alpha-2 country codes. Visitors from these countries see only the login buttons listed below. Several codes share one set. An empty list hides nothing."
+    hide_login_idp_visible_buttons: "Buttons that stay visible on the restricted login screen. Use passkey or the provider button class: vkid, yandex, google_oauth2, github."
+    hide_login_idp_restrict_unknown_country: "When the visitor country cannot be read, show the restricted button set. Applies only when the country list is not empty."
