@@ -56,8 +56,20 @@ test("allowlist css hides other social buttons and passkey", () => {
 
 test("passkey in the allowlist is not hidden", () => {
   const css = buildCss("passkey");
-  assert.match(css, /html\.hide-login-idp-pending \.btn-social \{ display: none !important; \}/);
-  assert.equal(css.includes("passkey-login-button"), false);
+  assert.match(
+    css,
+    /html\.hide-login-idp-pending \.btn-social:not\(\.passkey-login-button\) \{ display: none !important; \}/
+  );
+  assert.equal(css.includes(".passkey-login-button {"), false);
+});
+
+test("passkey stays visible next to an allowed provider", () => {
+  const css = buildCss("vkid|passkey");
+  assert.match(
+    css,
+    /html\.hide-login-idp-pending \.btn-social:not\(\.vkid\):not\(\.passkey-login-button\)/
+  );
+  assert.equal(css.includes(".passkey-login-button {"), false);
 });
 
 test("empty allowlist hides every social button and passkey", () => {

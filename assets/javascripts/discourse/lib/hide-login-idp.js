@@ -31,9 +31,10 @@ export function buildCss(visibleButtonsSetting) {
   const allowedSet = new Set(allowed);
   let social = "html.hide-login-idp-pending .btn-social";
   for (const token of allowed) {
-    if (token !== "passkey") {
-      social += `:not(.${token})`;
-    }
+    social +=
+      token === "passkey"
+        ? ":not(.passkey-login-button)"
+        : `:not(.${token})`;
   }
   let css = `${social} { display: none !important; }`;
   if (!allowedSet.has("passkey")) {
